@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "358234498557",
+    "project_id": "wollygator-7f81c",
+    "storage_bucket": "wollygator-7f81c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:358234498557:android:64472ba87d6d0380b8e594",
+        "android_client_info": {
+          "package_name": "br.com.wollygator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXrsjkaOk3cs0zroo88UIg5Dl7o3L40BQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

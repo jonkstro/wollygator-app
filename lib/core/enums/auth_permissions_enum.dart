@@ -1,0 +1,4 @@
+enum AuthPermissionsEnum {
+  admin,
+  user,
+}
