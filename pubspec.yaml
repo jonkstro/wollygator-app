@@ -35,8 +35,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
-  flutter_native_splash: ^2.3.13
+  flutter_native_splash: ^2.3.10
   provider: ^6.1.1
+  flutter_dotenv: ^5.1.0
+  firebase_core: ^2.25.4
+  firebase_auth: ^4.17.5
+  cloud_firestore: ^4.15.5
+  firebase_storage: ^11.6.6
+  shared_preferences: ^2.2.2
+
+
+
 
 dev_dependencies:
   flutter_test:
@@ -62,7 +71,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - assets/images/splash-logo.jpeg
+    - assets/images/loading-page-image.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -76,7 +87,16 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: Open Sans
+      fonts:
+        - asset: assets/fonts/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans-Italic.ttf
+          style: italic
+        - asset: assets/fonts/OpenSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/OpenSans-Light.ttf
+          weight: 300
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
