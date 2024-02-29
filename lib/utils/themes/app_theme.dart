@@ -22,12 +22,18 @@ class CustomAppTheme {
     ColorScheme colorScheme,
   ) {
     return ThemeData(
-      fontFamily: _font,
-      useMaterial3: true,
-      textTheme: textTheme,
-      elevatedButtonTheme: elevatedButtonTheme,
-      colorScheme: colorScheme,
-      // add mais configurações se for necessário
-    );
+        fontFamily: _font,
+        useMaterial3: true,
+        textTheme: textTheme,
+        elevatedButtonTheme: elevatedButtonTheme,
+        colorScheme: colorScheme,
+        inputDecorationTheme: const InputDecorationTheme(
+          labelStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+          ),
+        )
+        // add mais configurações se for necessário
+        );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wolly_team/components/auth_form_container.dart';
 import 'package:wolly_team/components/auth_form_flip_animation.dart';
 import 'package:wolly_team/core/models/auth_form_model.dart';
 
@@ -21,22 +22,17 @@ class _AuthFormWidgetState extends State<AuthFormWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.transparent,
-      width: 600,
-      height: 400,
-      child: Form(
-        key: _formKey,
-        child: AuthFormFlipAnimation(
+    return Form(
+      key: _formKey,
+      child: AuthFormFlipAnimation(
+        formData: _formData,
+        loginForm: LoginForm(
           formData: _formData,
-          loginForm: LoginForm(
-            formData: _formData,
-            toggleAuthMode: _toggleAuthMode,
-          ),
-          signupForm: SignupForm(
-            toggleAuthMode: _toggleAuthMode,
-            formData: _formData,
-          ),
+          toggleAuthMode: _toggleAuthMode,
+        ),
+        signupForm: SignupForm(
+          toggleAuthMode: _toggleAuthMode,
+          formData: _formData,
         ),
       ),
     );
@@ -59,39 +55,59 @@ class SignupForm extends StatefulWidget {
 class _SignupFormState extends State<SignupForm> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 600,
-      height: 400,
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Name'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.text,
+    return AuthFormContainer(
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: 'Name',
+              prefixIcon: Icon(Icons.person),
             ),
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Email'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.emailAddress,
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.text,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: 'Email',
+              prefixIcon: Icon(Icons.email),
             ),
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Password'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.text,
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.emailAddress,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Password',
+              prefixIcon: const Icon(Icons.lock),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.visibility),
+              ),
             ),
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Confirm Password'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.text,
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.text,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Confirm Password',
+              prefixIcon: const Icon(Icons.lock),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.visibility),
+              ),
             ),
-            const Spacer(),
-            TextButton(
-              onPressed: widget.toggleAuthMode,
-              child: const Text('Fazer Login'),
-            ),
-          ],
-        ),
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.text,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          const Spacer(),
+          TextButton(
+            onPressed: widget.toggleAuthMode,
+            child: const Text('Fazer Login'),
+          ),
+        ],
       ),
     );
   }
@@ -114,29 +130,37 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 600,
-      height: 400,
-      child: Card(
-        child: Column(
-          children: <Widget>[
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Email'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.emailAddress,
+    return AuthFormContainer(
+      child: Column(
+        children: <Widget>[
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: 'Email',
+              prefixIcon: Icon(Icons.email),
             ),
-            TextFormField(
-              decoration: const InputDecoration(labelText: 'Password'),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.text,
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.emailAddress,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Password',
+              prefixIcon: const Icon(Icons.lock),
+              suffixIcon: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.visibility),
+              ),
             ),
-            const Spacer(),
-            TextButton(
-              onPressed: widget.toggleAuthMode,
-              child: const Text('Fazer registro'),
-            ),
-          ],
-        ),
+            textInputAction: TextInputAction.next,
+            keyboardType: TextInputType.text,
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          const Spacer(),
+          TextButton(
+            onPressed: widget.toggleAuthMode,
+            child: const Text('Fazer registro'),
+          ),
+        ],
       ),
     );
   }
