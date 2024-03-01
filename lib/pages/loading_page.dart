@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:wolly_team/utils/constants/constant_colors.dart';
 
 class LoadingPage extends StatelessWidget {
@@ -15,11 +16,14 @@ class LoadingPage extends StatelessWidget {
               Image.asset(
                 'assets/images/loading-page-image.png',
                 width: 300,
-              ),
+              ).animate().fade(delay: const Duration(milliseconds: 300)),
               const SizedBox(height: 50),
               const CircularProgressIndicator(
                 color: ConstantColors.blumine,
-              ),
+              )
+                  .animate()
+                  .fade(delay: const Duration(milliseconds: 500))
+                  .slide(),
               const SizedBox(height: 10),
               const Text(
                 'Loading...',
@@ -29,6 +33,9 @@ class LoadingPage extends StatelessWidget {
                   fontWeight: FontWeight.normal,
                 ),
               )
+                  .animate()
+                  .fade(delay: const Duration(milliseconds: 1000))
+                  .slide(),
             ],
           ),
         ));

@@ -59,6 +59,7 @@ class _LoginFormState extends State<LoginForm> {
             style: Theme.of(context).textTheme.labelSmall,
             onChanged: (value) => widget.formData.password = value,
           ),
+          const Spacer(),
           Container(
             margin: const EdgeInsets.all(12),
             width: double.infinity,
@@ -77,7 +78,6 @@ class _LoginFormState extends State<LoginForm> {
               },
             ),
           ),
-          const Spacer(),
           const Divider(
             height: 0.25,
           ),
