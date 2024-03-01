@@ -13,7 +13,7 @@ class AuthFormContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 360.0,
+      height: 400.0,
       width: 350.0,
       constraints: const BoxConstraints(
         maxWidth: 500,
